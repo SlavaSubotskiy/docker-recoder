@@ -1,12 +1,12 @@
-# Recoder instance based on latest debian
+# Recoder instance based debian:jessie
 
-FROM debian
+FROM debian:jessie
 
 MAINTAINER anandasattva@gmail.com
 
 RUN LIST="/etc/apt/sources.list" && \
-DEB="deb http://www.deb-multimedia.org wheezy main non-free" && \
-DEB_SRC="deb-src http://www.deb-multimedia.org wheezy main non-free" && \
+DEB="deb http://www.deb-multimedia.org jessie main non-free" && \
+DEB_SRC="deb-src http://www.deb-multimedia.org jessie main non-free" && \
 echo "$DEB" >> $LIST && \
 echo "$DEB_SRC" >> $LIST && \
 apt-get update && \
