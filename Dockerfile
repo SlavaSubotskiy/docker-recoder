@@ -1,14 +1,14 @@
-# Recoder instance based debian:jessie
+# Recoder instance based on latest debian
 
-FROM debian:jessie
+FROM debian
 
 MAINTAINER anandasattva@gmail.com
 
 COPY ffmpeg-x264-faac-mp3-zvbi_1-1_amd64.deb /tmp/ffmpeg-x264-faac-mp3-zvbi_1-1_amd64.deb
 
 RUN LIST="/etc/apt/sources.list" && \
-DEB="deb http://www.deb-multimedia.org jessie main non-free" && \
-DEB_SRC="deb-src http://www.deb-multimedia.org jessie main non-free" && \
+DEB="deb http://www.deb-multimedia.org wheezy main non-free" && \
+DEB_SRC="deb-src http://www.deb-multimedia.org wheezy main non-free" && \
 echo "$DEB" >> $LIST && \
 echo "$DEB_SRC" >> $LIST && \
 apt-get update && \
